@@ -1,6 +1,4 @@
 <script>
-  import Header from "./components/Header.svelte";
-
   import VelocitatLectora from "./tools/VelocitatLectora.svelte";
   import DibuixInstruccions from "./tools/DibuixInstruccions.svelte";
 
