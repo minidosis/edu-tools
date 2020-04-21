@@ -7,12 +7,14 @@
     "Dibuix per instruccions": DibuixInstruccions
   };
 
-  let currTool = null;
+  let currTool = DibuixInstruccions;
 </script>
 
 <main>
   {#if currTool}
-    <span class="link" on:click="{() => (currTool = null)}">&lt; Eines</span>
+    <div>
+      <span class="link" on:click="{() => (currTool = null)}">&lt; Eines</span>
+    </div>
     <svelte:component this="{currTool}" />
   {:else}
     <h1>Eines</h1>
@@ -37,5 +39,13 @@
   .link {
     cursor: pointer;
     color: blue;
+  }
+  @media print {
+    .link {
+      display: none;
+    }
+    main {
+      padding: 2em;
+    }
   }
 </style>
