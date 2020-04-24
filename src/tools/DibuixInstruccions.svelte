@@ -119,7 +119,7 @@
   const drawPoints = (ctx, ptarray) => {
     for (let p of ptarray) {
       ctx.beginPath();
-      ctx.arc(p.x * L, p.y * L, 5, 0, Math.PI * 2);
+      ctx.arc(p.x * L, p.y * L, 4.2, 0, Math.PI * 2);
       ctx.fillStyle = "black";
       ctx.fill();
     }
@@ -186,8 +186,9 @@
 
 <svelte:window on:keydown="{onKeyDown}" />
 
-<button on:click="{clearPath}">Esborra</button>
 <div class="content">
+  <button on:click="{clearPath}">Esborra</button>
+
   <div class="layers">
     <canvas
       class="grid"
@@ -220,31 +221,30 @@
   }
   .instructions {
     margin-top: 1em;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     max-width: 500px;
-    margin: 1em auto 0 auto;
   }
   div.instr {
     display: inline-flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center;
+    align-items: baseline;
     width: 4.2rem;
     margin-bottom: 0.3rem;
   }
   span.symbol {
     margin-left: 0.2rem;
     font-weight: bold;
-    height: 2rem;
     width: 1.2rem;
   }
   .content {
+    max-width: 35rem;
+    margin: auto;
   }
   .layers {
     position: relative;
     width: 500px;
     height: 500px;
-    margin: auto;
   }
   .layers canvas {
     position: absolute;
