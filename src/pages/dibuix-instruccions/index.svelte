@@ -1,7 +1,7 @@
 <script>
   import { onMount } from "svelte";
-  import Help from "../components/Help.svelte";
-  import Key from "../components/Key.svelte";
+  import Help from "../../components/Help.svelte";
+  import Key from "../../components/Key.svelte";
 
   let canvas = {
     grid: null,
@@ -192,7 +192,7 @@
 </svelte:head>
 
 <div class="help">
-  <Help>
+  <Help id="dibuix-instruccions">
     <ul>
       <li>Clica a la graella per situar el punt inicial. (Pots fer-ho un cop començat el dibuix.)</li>
       <li>

@@ -1,4 +1,6 @@
 <script>
+  export let id;
+
   import { fade } from "svelte/transition";
   import HelpIcon from "./HelpIcon.svelte";
 
@@ -6,7 +8,11 @@
     duration: 300
   };
 
-  let visible = true;
+  let visible = localStorage.getItem(id) === null;
+
+  $: if (!visible) {
+    localStorage.setItem(id, false);
+  }
 </script>
 
 {#if visible}
@@ -35,8 +41,7 @@
     z-index: 10;
     position: fixed;
     left: calc(50% - 20rem);
-    top: 1rem;
-    border: 1px solid orange;
+    top: 0.3rem;
     background-color: rgb(255, 226, 172);
     padding: 0.5rem;
     border-radius: 0.2rem;
