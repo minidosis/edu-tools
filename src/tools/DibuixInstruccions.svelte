@@ -1,5 +1,7 @@
 <script>
   import { onMount } from "svelte";
+  import Help from "../components/Help.svelte";
+  import Key from "../components/Key.svelte";
 
   let canvas = {
     grid: null,
@@ -185,6 +187,25 @@
 </script>
 
 <svelte:window on:keydown="{onKeyDown}" />
+<svelte:head>
+  <title>Dibuix per Instruccions</title>
+</svelte:head>
+
+<div class="help">
+  <Help>
+    <ul>
+      <li>Clica a la graella per situar el punt inicial. (Pots fer-ho un cop començat el dibuix.)</li>
+      <li>
+        Utilitza les fletxes (<Key>🠑</Key>,<Key>🠓</Key>, <Key>🠒</Key>, <Key>🠐</Key>) 
+        del teclat per fer el dibuix.
+      </li>
+      <li>
+        Quan hagis acabat, simplement <strong>imprimeix</strong>
+        la pàgina, veuràs que només s'imprimeix la graella i les instruccions.
+      </li>
+    </ul>
+  </Help>
+</div>
 
 <div class="content">
   <button on:click="{clearPath}">Esborra</button>
@@ -251,9 +272,13 @@
     top: 0;
     left: 0;
   }
+
   @media print {
     canvas.path,
     button {
+      display: none;
+    }
+    .help {
       display: none;
     }
   }
