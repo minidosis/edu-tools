@@ -2,6 +2,7 @@
   import { onMount } from "svelte";
   import Help from "../../components/Help.svelte";
   import Key from "../../components/Key.svelte";
+  import Arrow from "../../components/Arrow.svelte";
 
   let canvas = {
     grid: null,
@@ -194,14 +195,20 @@
 <div class="help">
   <Help id="dibuix-instruccions">
     <ul>
-      <li>Clica a la graella per situar el punt inicial. (Pots fer-ho un cop començat el dibuix.)</li>
       <li>
-        Utilitza les fletxes (<Key>🠑</Key>,<Key>🠓</Key>, <Key>🠒</Key>, <Key>🠐</Key>) 
-        del teclat per fer el dibuix.
+        <strong>Clica a la graella</strong> per situar el punt inicial. 
+        (Pots fer-ho un cop començat el dibuix.)
+      </li>
+      <li>
+        Utilitza les <strong>fletxes del teclat</strong> per fer el dibuix.
       </li>
       <li>
         Quan hagis acabat, simplement <strong>imprimeix</strong>
         la pàgina, veuràs que només s'imprimeix la graella i les instruccions.
+      </li>
+      <li>
+        Per generar un PDF, instal·la algun programa que et permeti <strong>imprimir a 
+        PDF</strong> en comptes de la impressora.
       </li>
     </ul>
   </Help>
@@ -230,7 +237,7 @@
     {#each compressedPath as { instr, times }}
       <div class="instr">
         <span>{times}</span>
-        <span class="symbol">{symbol[instr]}</span>
+        <Arrow dir={instr} />
       </div>
     {/each}
   </div>
@@ -249,7 +256,7 @@
     display: inline-flex;
     flex-direction: row;
     justify-content: center;
-    align-items: baseline;
+    align-items: center;
     width: 4.2rem;
     margin-bottom: 0.3rem;
   }
