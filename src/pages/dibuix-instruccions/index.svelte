@@ -257,8 +257,8 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    width: 4.2rem;
-    margin-bottom: 0.3rem;
+    width: 3rem;
+    margin-bottom: 1rem;
   }
   .content {
     max-width: 35rem;
