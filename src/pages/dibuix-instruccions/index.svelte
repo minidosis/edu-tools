@@ -260,11 +260,6 @@
     width: 4.2rem;
     margin-bottom: 0.3rem;
   }
-  span.symbol {
-    margin-left: 0.2rem;
-    font-weight: bold;
-    width: 1.2rem;
-  }
   .content {
     max-width: 35rem;
     margin: auto;
