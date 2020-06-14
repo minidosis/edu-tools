@@ -16,6 +16,8 @@
 </script>
 
 {#if visible}
+  <div class="outside" transition:fade on:click={() => (visible = false)}>
+  </div>
   <div class="help text" transition:fade="{scaleParams}">
     <HelpIcon />
     <div>
@@ -36,6 +38,14 @@
     margin: 0;
     margin-bottom: 0.8rem;
     font-size: 1.5rem;
+  }
+  .outside {
+    z-index: 9;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
   }
   .help {
     z-index: 10;
