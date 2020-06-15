@@ -4,6 +4,7 @@
   import Key from "../../components/Key.svelte";
   import Arrow from "../../components/Arrow.svelte";
   import Button from "../../components/Button.svelte";
+  import { KEY_DIBUIX_INSTRUCCIONS } from '../../config';
 
   let canvas = {
     grid: null,
@@ -20,10 +21,8 @@
     DOWN = 2,
     LEFT = 3;
 
-  const STORE_KEY = "DibuixInstruccions:path";
-
   const loadData = () => {
-    const data = localStorage.getItem(STORE_KEY);
+    const data = localStorage.getItem(KEY_DIBUIX_INSTRUCCIONS);
     return data
       ? JSON.parse(data)
       : {
@@ -33,7 +32,7 @@
   };
 
   const saveData = () => {
-    localStorage.setItem(STORE_KEY, JSON.stringify(data));
+    localStorage.setItem(KEY_DIBUIX_INSTRUCCIONS, JSON.stringify(data));
   };
 
   let data = loadData();
