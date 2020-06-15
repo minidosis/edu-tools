@@ -1,6 +1,7 @@
 <script>
   import { KEY_VELOCITAT_LECTURA } from "../../config";
   import placeholderStory from "./placeholderStory";
+  import Help from "../../components/Help.svelte";
 
   let editing = false;
   let story;
@@ -15,18 +16,18 @@
     } catch (e) {
       story = placeholderStory;
     }
-  }
+  };
 
   loadStory();
 
   $: annotatedBody = countWords(story.body);
 
-  const countWords = body => {
+  const countWords = (body) => {
     let partial = 0;
     let annotatedBody = [];
     for (let i = 0; i < body.length; i++) {
       annotatedBody.push({ partial, text: body[i] });
-      const numWords = body[i].split(" ").filter(s => s.length > 0).length;
+      const numWords = body[i].split(" ").filter((s) => s.length > 0).length;
       partial += numWords;
     }
     return annotatedBody;
@@ -44,6 +45,28 @@
     editing = false;
   };
 </script>
+
+<Help id="dibuix-instruccions">
+  <ul>
+    <li>
+      <strong>Clica el llapis</strong>
+      per poder editar el títol i el text.
+    </li>
+    <li>
+      Els <strong>salts de línia</strong> els has de posar tu manualment.
+      Els comptatges de paraules es recalculen automàticament.
+    </li>
+    <li>
+      Quan hagis acabat, clica el botó de confirmació
+      i simplement <strong>imprimeix</strong> la pàgina.
+    </li>
+    <li>
+      Per generar un PDF, instal·la algun programa que et permeti
+      <strong>imprimir a PDF</strong>
+      en comptes de la impressora.
+    </li>
+  </ul>
+</Help>
 
 <div class="root">
   <div class="header">
