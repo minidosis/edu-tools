@@ -65,7 +65,10 @@
       {#if editing}
         <div class="edit">
           <h2 contenteditable="true" bind:this="{titleElem}">{story.title}</h2>
-          <textarea bind:this="{textareaElem}" value={story.body.join('\n')} />
+          <textarea
+            bind:this="{textareaElem}"
+            value="{story.body.join('\n')}"
+          ></textarea>
           <button on:click="{changeStory}">
             <div class="check"></div>
           </button>
