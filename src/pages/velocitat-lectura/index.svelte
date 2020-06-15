@@ -200,9 +200,8 @@
   }
   .doc {
     padding: 2rem 2rem 2rem 0.5rem;
-    box-shadow: 1px 1px 5px #ccc;
-    border-radius: 0.3rem;
-    min-width: 28rem;
+    box-shadow: 0px 2px 5px #ccc;
+    min-width: 30rem;
   }
   .doc {
     position: relative;
@@ -218,12 +217,15 @@
     text-align: right;
   }
   .doc td:nth-child(1) span {
-    padding-right: 0.6rem;
-    color: gray;
+    padding-right: 0.8rem;
+    color: rgb(158, 158, 158);
+    font-size: 0.6em;
   }
   .doc td:nth-child(2) {
     margin-top: 0;
     font-size: 1.4rem;
+    font-weight: 500;
+    color: black;
   }
   .doc h2 {
     margin-bottom: 0.5rem;
@@ -256,6 +258,7 @@
   }
   #stats {
     max-width: 9rem;
+    font-size: 0.8em;
   }
   #stats table {
     border-collapse: collapse;
@@ -264,7 +267,7 @@
   #stats td,
   #stats th {
     border: 1px solid black;
-    padding: 0.3rem 0.3rem 0;
+    padding: 0.3rem 0.5rem 0;
   }
   #stats td {
     width: 2.5rem;
@@ -290,6 +293,9 @@
   @media print {
     .doc button {
       display: none;
+    }
+    .root * {
+      color: black;
     }
   }
 </style>
