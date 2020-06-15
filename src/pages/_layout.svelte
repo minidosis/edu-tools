@@ -34,7 +34,7 @@
   }
   footer {
     color: #aaa;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     position: fixed;
     bottom: 0;
     left: 0;
@@ -49,6 +49,9 @@
     }
     footer {
       display: none;
+    }
+    .page {
+      padding-top: 1rem;
     }
   }
 </style>
