@@ -17,7 +17,8 @@
     width: 2.5rem;
     height: 2.5rem;
     padding: 0.4rem 0.6rem 0.3rem;
-    background-color: orange;
+    background-color: var(--primary-color);
+    color: white;
     border: 1px solid white;
     border-radius: 1.25rem;
     font-size: 1.2rem;

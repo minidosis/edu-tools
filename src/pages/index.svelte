@@ -4,7 +4,7 @@
 
 <ul>
   <li>
-    <ToolButton id="dibuix-instruccions" name="Dibuix Instruccions">
+    <ToolButton id="dibuix-instruccions" name="Dibuix per Instruccions">
       Per preparar siluetes en una graella per dibuixar amb instruccions amunt,
       avall, dreta i esquerra.
     </ToolButton>

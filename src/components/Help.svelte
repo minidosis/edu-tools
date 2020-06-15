@@ -50,17 +50,18 @@
   .help {
     z-index: 10;
     position: fixed;
-    left: calc(50% - 20rem);
+    left: calc(50% - 18rem);
     top: 0.3rem;
-    background-color: rgb(255, 226, 172);
+    background-color: rgb(255, 233, 213);
     padding: 0.5rem;
     border-radius: 0.2rem;
   }
   .help.text {
     display: flex;
     flex-direction: row;
-    box-shadow: 0 0.5rem 0.8rem #bbb;
-    width: 40rem;
+    box-shadow: 0 0.5rem 0.8rem rgba(0, 0, 0, 0.5);
+    max-width: 36rem;
+    border: 1px solid var(--primary-color);
   }
   .help.text div {
     flex: 1;

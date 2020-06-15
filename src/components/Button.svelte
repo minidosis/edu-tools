@@ -8,7 +8,8 @@
 
 <style>
   button {
-    background-color: orange;
+    background-color: var(--primary-color);
+    color: white;
     border-radius: 4px;
     padding: .5rem .8rem;
   }

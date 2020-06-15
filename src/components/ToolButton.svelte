@@ -23,7 +23,7 @@
     border-radius: 0.4rem;
   }
   a:hover {
-    background-color: #f8f8f8;
+    background-color: #fff2e5;
   }
   a {
     font-size: 18;
@@ -32,7 +32,7 @@
   a h3 {
     margin-top: 0;
     margin-bottom: 0.4rem;
-    color: green;
+    color: var(--primary-color);
   }
   a p {
     margin: 0;

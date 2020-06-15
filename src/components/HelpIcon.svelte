@@ -11,7 +11,7 @@
     height: 1.3rem;
     padding-top: .1rem;
     border-radius: 1rem;
-    background-color: rgba(128, 128, 128, 0.651);
+    background-color: var(--primary-color);
     color: rgba(255, 255, 255, 0.835);
     margin-right: .3rem;
   }

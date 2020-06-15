@@ -174,10 +174,7 @@
 </div>
 
 <style>
-  @font-face {
-    font-family: Escolar;
-    src: url(/escolar.ttf);
-  }
+
   .root {
     margin: auto;
     font-size: 1.4rem;
@@ -295,7 +292,7 @@
     width: 1rem;
     height: 1rem;
     clip-path: polygon(0 44%, 33% 79%, 100% 0, 100% 23%, 34% 100%, 0 65%);
-    background-color: black;
+    background-color: white;
   }
 
   @media print {
