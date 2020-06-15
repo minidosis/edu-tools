@@ -23,10 +23,14 @@
     align-items: center;
     padding-left: 1rem;
     border-bottom: 1px solid #eee;
+    z-index: 100;
+    background-color: white;
   }
   .page {
-    margin-top: 3rem;
     padding: 1rem;
+    padding-top: 3rem;
+    max-width: 48rem;
+    margin: auto;
   }
   footer {
     color: #aaa;
