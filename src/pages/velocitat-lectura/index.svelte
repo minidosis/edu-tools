@@ -9,6 +9,9 @@
     try {
       const storyJson = localStorage.getItem(KEY_VELOCITAT_LECTURA);
       story = JSON.parse(storyJson);
+      if (!story) {
+        story = placeholderStory;
+      }
     } catch (e) {
       story = placeholderStory;
     }
