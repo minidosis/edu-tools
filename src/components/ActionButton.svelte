@@ -1,5 +1,5 @@
 <script>
-  export let hint;
+  export let hint = undefined;
 </script>
 
 <button on:click title="{hint}">

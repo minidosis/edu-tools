@@ -4,16 +4,19 @@
   import Key from "../../components/Key.svelte";
   import Arrow from "../../components/Arrow.svelte";
   import Button from "../../components/Button.svelte";
-  import { KEY_DIBUIX_INSTRUCCIONS } from '../../config';
+  import ActionButton from "../../components/ActionButton.svelte";
+
+  import { KEY_DIBUIX_INSTRUCCIONS } from "../../config";
+import DeleteIcon from "../../components/DeleteIcon.svelte";
 
   let canvas = {
     grid: null,
-    path: null
+    path: null,
   };
   let ctx;
 
   const colors = {
-    closedPath: "red"
+    closedPath: "red",
   };
 
   const UP = 0,
@@ -27,7 +30,7 @@
       ? JSON.parse(data)
       : {
           init: { x: 1, y: 1 },
-          path: []
+          path: [],
         };
   };
 
@@ -65,10 +68,10 @@
     [UP]: DOWN,
     [LEFT]: RIGHT,
     [RIGHT]: LEFT,
-    [DOWN]: UP
+    [DOWN]: UP,
   };
 
-  const addInstruction = instr => {
+  const addInstruction = (instr) => {
     const lastInstruction = data.path[data.path.length - 1];
     if (lastInstruction == reverseInstruction[instr]) {
       data.path = data.path.slice(0, data.path.length - 1);
@@ -79,7 +82,7 @@
     redraw();
   };
 
-  const onKeyDown = e => {
+  const onKeyDown = (e) => {
     switch (e.key) {
       case "ArrowUp":
         addInstruction(UP);
@@ -132,7 +135,7 @@
     return a.x === b.x && a.y === b.y;
   };
 
-  const setCenter = e => {
+  const setCenter = (e) => {
     data.init.x = Math.round(e.offsetX / L);
     data.init.y = Math.round(e.offsetY / L);
     drawBackground();
@@ -178,7 +181,7 @@
     [UP]: "🠑",
     [DOWN]: "🠓",
     [RIGHT]: "🠒",
-    [LEFT]: "🠐"
+    [LEFT]: "🠐",
   };
 
   onMount(() => {
@@ -196,26 +199,32 @@
   <Help id="dibuix-instruccions">
     <ul>
       <li>
-        <strong>Clica a la graella</strong> per situar el punt inicial. 
-        (Pots fer-ho un cop començat el dibuix.)
+        <strong>Clica a la graella</strong>
+        per situar el punt inicial. (Pots fer-ho un cop començat el dibuix.)
       </li>
       <li>
-        Utilitza les <strong>fletxes del teclat</strong> per fer el dibuix.
+        Utilitza les
+        <strong>fletxes del teclat</strong>
+        per fer el dibuix.
       </li>
       <li>
-        Quan hagis acabat, simplement <strong>imprimeix</strong>
+        Quan hagis acabat, simplement
+        <strong>imprimeix</strong>
         la pàgina, veuràs que només s'imprimeix la graella i les instruccions.
       </li>
       <li>
-        Per generar un PDF, instal·la algun programa que et permeti <strong>imprimir a 
-        PDF</strong> en comptes de la impressora.
+        Per generar un PDF, instal·la algun programa que et permeti
+        <strong>imprimir a PDF</strong>
+        en comptes de la impressora.
       </li>
     </ul>
   </Help>
 </div>
 
 <div class="content">
-  <Button on:click="{clearPath}">Esborra</Button>
+  <ActionButton on:click="{clearPath}" hint="Esborra">
+    <DeleteIcon />
+  </ActionButton>
 
   <div class="layers">
     <canvas
@@ -237,7 +246,7 @@
     {#each compressedPath as { instr, times }}
       <div class="instr">
         <span>{times}</span>
-        <Arrow dir={instr} />
+        <Arrow dir="{instr}" />
       </div>
     {/each}
   </div>
@@ -261,6 +270,7 @@
     margin-bottom: 1rem;
   }
   .content {
+    position: relative; /* For the ActionButton */
     max-width: 35rem;
     margin: auto;
   }
