@@ -1,7 +1,9 @@
 <script>
+  import ActionButton from "../../components/ActionButton.svelte";
+  import Button from "../../components/Button.svelte";
+  import Help from "../../components/Help.svelte";
   import { KEY_VELOCITAT_LECTURA } from "../../config";
   import placeholderStory from "./placeholderStory";
-  import Help from "../../components/Help.svelte";
 
   let editing = false;
   let story;
@@ -53,12 +55,15 @@
       per poder editar el títol i el text.
     </li>
     <li>
-      Els <strong>salts de línia</strong> els has de posar tu manualment.
-      Els comptatges de paraules es recalculen automàticament.
+      Els
+      <strong>salts de línia</strong>
+      els has de posar tu manualment. Els comptatges de paraules es recalculen
+      automàticament.
     </li>
     <li>
-      Quan hagis acabat, clica el botó de confirmació
-      i simplement <strong>imprimeix</strong> la pàgina.
+      Quan hagis acabat, clica el botó de confirmació i simplement
+      <strong>imprimeix</strong>
+      la pàgina.
     </li>
     <li>
       Per generar un PDF, instal·la algun programa que et permeti
@@ -88,9 +93,9 @@
             bind:this="{textareaElem}"
             value="{story.body.join('\n')}"
           ></textarea>
-          <button on:click="{changeStory}">
+          <ActionButton on:click="{changeStory}" hint="Salva">
             <div class="check"></div>
-          </button>
+          </ActionButton>
         </div>
       {:else}
         <table>
@@ -109,7 +114,9 @@
             </tr>
           {/each}
         </table>
-        <button on:click="{() => (editing = true)}">🖉</button>
+        <ActionButton on:click="{() => (editing = true)}" hint="Edita">
+          🖉
+        </ActionButton>
       {/if}
 
     </div>
@@ -250,27 +257,9 @@
     margin-bottom: 0.5rem;
     margin-top: 0.2rem;
   }
-  .doc button {
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    top: 0.25rem;
-    right: 0.25rem;
-    width: 2.5rem;
-    height: 2.5rem;
-    padding: 0.4rem 0.6rem 0.3rem;
-    background-color: orange;
-    border: 1px solid white;
-    border-radius: 1.25rem;
-    font-size: 1.2rem;
-  }
-  .doc button:hover {
-    border: 1px solid rgb(202, 138, 18);
-  }
   .doc textarea {
     font-family: Escolar;
-    min-width: 26rem;
+    min-width: 29rem;
     min-height: 35rem;
     font-size: 1.4rem;
     line-height: 1.3;

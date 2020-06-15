@@ -1,4 +1,8 @@
-<button on:click>
+<script>
+  export let hint;
+</script>
+
+<button on:click title={hint}>
   <slot>ERROR: No button text!</slot>
 </button>
 
