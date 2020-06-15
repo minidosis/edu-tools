@@ -23,7 +23,7 @@
     align-items: center;
     padding-left: 1rem;
     border-bottom: 1px solid #eee;
-    z-index: 100;
+    z-index: 1;
     background-color: white;
   }
   .page {
