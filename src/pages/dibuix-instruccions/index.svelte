@@ -3,6 +3,7 @@
   import Help from "../../components/Help.svelte";
   import Key from "../../components/Key.svelte";
   import Arrow from "../../components/Arrow.svelte";
+  import Button from "../../components/Button.svelte";
 
   let canvas = {
     grid: null,
@@ -215,7 +216,7 @@
 </div>
 
 <div class="content">
-  <button on:click="{clearPath}">Esborra</button>
+  <Button on:click="{clearPath}">Esborra</Button>
 
   <div class="layers">
     <canvas
@@ -276,8 +277,7 @@
   }
 
   @media print {
-    canvas.path,
-    button {
+    canvas.path {
       display: none;
     }
     .help {
